@@ -9,14 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-
+import javax.validation.constraints.Size;
 
 import com.sun.istack.NotNull;
 
 
 @Entity
-@Table(name = "postagem")
+@Table(name = "postagens")
 public class Postagens {
 	
 	
@@ -25,10 +24,11 @@ public class Postagens {
 	private long id;
 	
 	@NotNull
+	@Size(min=20, max=60)
 	private String titulo;
 	
 	@NotNull
-
+	@Size(min=50, max=100)
 	private String texto;
 	
 	@Temporal(TemporalType.TIMESTAMP)
@@ -65,8 +65,5 @@ public class Postagens {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	
-	
-	
 
 }
