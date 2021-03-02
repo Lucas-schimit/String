@@ -29,7 +29,6 @@ public class PostagensController {
 	private PostagemRepository repository;
 		
 	@GetMapping
-	
 	public ResponseEntity<List<Postagens>> GetAll(){
 		
 		return ResponseEntity.ok(repository.findAll());
@@ -62,4 +61,5 @@ public class PostagensController {
 	public void delete(@PathVariable long id) {
 		repository.deleteById(id);
 	} 
+	
 }
