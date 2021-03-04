@@ -29,7 +29,7 @@ public class UsuarioService {
 		String senhaEncoder = encoder.encode(usuario.getSenha());
 		usuario.setSenha(senhaEncoder);
 		
-		return repository.save(usuario);
+		return Optional.of(repository.save(usuario));
 	}
 	
 	public Optional<UsuarioLogin> Logar(Optional<UsuarioLogin> user){ 
