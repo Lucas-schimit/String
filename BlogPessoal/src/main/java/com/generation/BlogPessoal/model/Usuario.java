@@ -28,10 +28,23 @@ public class Usuario {
 	@NotNull
 	@Size(min=5)
 	private String senha;
+	
+	private String tipoUsuario;
 
 	public long getId() {
 		return id;
 	}
+
+	
+	public String getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+
 
 	public void setId(long id) {
 		this.id = id;

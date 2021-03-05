@@ -2,7 +2,6 @@ package com.generation.BlogPessoal.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -16,29 +15,20 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 public class SwaggerConfig {
 
-		@Bean
-		public Docket docket() {
-			return new Docket(DocumentationType.SWAGGER_2)
-				.select()
+	@Bean
+	public Docket docket() {
+		return new Docket(DocumentationType.SWAGGER_2).select()
 				.apis(RequestHandlerSelectors.basePackage("com.generation.BlogPessoal.controller"))
-				.paths(PathSelectors.any())
-				.build()
-				.apiInfo(apiInfo());
-		}
+				.paths(PathSelectors.any()).build().apiInfo(apiInfo());
+	}
 
-		private ApiInfo apiInfo() {
-		
-			return new ApiInfoBuilder()
-					.title("Blog Pessoal")
-					.description("Api do Projeto do blog pessoal")
-					.version("1.0")
-					.contact(contact())
-					.build();
-		}
-		
-		private Contact contact() {
-			return new Contact("Lucas Alves Schimit",
-					"https://github.com/Lucas-schimit",
-					"Desenvolvedor Java");
-		}
+	private ApiInfo apiInfo() {
+
+		return new ApiInfoBuilder().title("Blog Pessoal").description("Api do Projeto do blog pessoal").version("1.0")
+				.contact(contact()).build();
+	}
+
+	private Contact contact() {
+		return new Contact("Lucas Alves Schimit", "https://github.com/Lucas-schimit", "Desenvolvedor Java");
+	}
 }
