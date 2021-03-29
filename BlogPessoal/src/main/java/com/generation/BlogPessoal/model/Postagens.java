@@ -41,7 +41,10 @@ public class Postagens {
 	private Tema tema;
 	
 	
-
+	@ManyToOne
+	@JsonIgnoreProperties("postagens")
+	private Usuario usuario;
+	
 	public Tema getTema() {
 		return tema;
 	}
@@ -81,5 +84,15 @@ public class Postagens {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
+	
 
 }
